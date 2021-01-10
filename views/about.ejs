@@ -1,29 +1,13 @@
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog Ninja | <%= title %></title>
-</head>
+<%- include('./partials/head.ejs') %>
 <body>
-
-  <nav>
-    <div class="site-title">
-      <a href="/"><h1>Blog Ninja</h1></a>
-      <p>A Net Ninja Site</p>
-    </div>
-    <ul>
-      <li><a href="/">Blogs</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/blogs/create">New Blog</a></li>
-    </ul>
-  </nav>
-
+  <%- include('./partials/nav.ejs') %>
   <div class="about content">
     <h2>About Us</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam malesuada suscipit molestie. Donec et hendrerit lectus. Duis consectetur sodales accumsan. Maecenas vitae elementum metus. Nam convallis justo metus, et convallis felis semper nec. Mauris ut efficitur leo. Suspendisse accumsan vulputate lectus porttitor egestas. Donec vulputate mauris vel lacus auctor, et hendrerit magna luctus. Nam id maximus tellus.</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam malesuada suscipit molestie. Donec et hendrerit lectus. Duis consectetur sodales accumsan. Maecenas vitae elementum metus. Nam convallis justo metus, et convallis felis semper nec. Mauris ut efficitur leo. Suspendisse accumsan vulputate lectus porttitor egestas. Donec vulputate mauris vel lacus auctor, et hendrerit magna luctus. Nam id maximus tellus.</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam malesuada suscipit molestie. Donec et hendrerit lectus. Duis consectetur sodales accumsan. Maecenas vitae elementum metus. Nam convallis justo metus, et convallis felis semper nec. Mauris ut efficitur leo. Suspendisse accumsan vulputate lectus porttitor egestas. Donec vulputate mauris vel lacus auctor, et hendrerit magna luctus. Nam id maximus tellus.</p>
   </div>
-
+  <%- include('./partials/footer.ejs') %>
 </body>
 </html>
