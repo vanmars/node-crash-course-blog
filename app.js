@@ -8,6 +8,7 @@ const app = express();
 
 // connect to MongoDB
 const dbURI = 'mongodb+srv://vanmars:test1234@nodetutorial.4k7sz.mongodb.net/node-tutorial?retryWrites=true&w=majority';
+
 mongoose.connect(dbURI, { useNewUrlParser: true,useUnifiedTopology: true})
   .then((result) => app.listen(3000))
   .catch((err) => console.log(err))
@@ -20,10 +21,10 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
-//blog routes
+// blog routes
 app.use('/blogs', blogRoutes);
 
-// routes
+// all other routes
 app.get('/', (req, res) => {
   res.redirect('/blogs');
 });
