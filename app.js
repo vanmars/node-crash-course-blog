@@ -1,28 +1,32 @@
 const express = require('express');
-
 const app = express();
+
+//register view engine
+app.set('view engine', 'ejs');  // looks in views folder by default
 
 // listen for requests
 app.listen(3000); // returns the instance of a server, and you can store in a const
 
 // respond to requests
 app.get('/', (req, res) => {
-  // res.send('<p>Home Page</p>'); // more intuitive than server.js file - don't need to set up header or status codes
-  res.sendFile('./views/index.html', { root: __dirname}); //default is an absolute path, so second arg needs to set the dirnmae
+  const blogs = [
+    {title: "Yoshi finds eggs", snippet: "Lorem ipsum dolor sit amet consectetur"},
+    {title: "Mario finds starts", snippet: "Lorem ipsum dolor sit amet consectetur" },
+    {title: "How to defeat bowser", snippet: "Lorem ipsum dolor sit amet consectetur"},
+  ]
+  res.render('index', {title: "Home", blogs})
 })
 
-//respond to get requests
 app.get('/about', (req, res) => {
-  // res.send('<p>About Page</p>'); 
-  res.sendFile('./views/about.html', { root: __dirname});
+  res.render('about', {title: "About"})
 })
 
 // redirects
-app.get('/about-us', (req,res) => {
-  res.redirect('/about');
+app.get('/blogs/create', (req,res) => {
+  res.render('create', {title: "Create a New Blog"})
 })
 
 // 404
 app.use((req, res) => {
-  res.status(404).sendFile('./views/404.html', { root: __dirname});
+  res.status(404).render('404', {title: "404"})
 })
