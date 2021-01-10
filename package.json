@@ -1,0 +1,23 @@
+{
+  "name": "crash-course",
+  "version": "1.0.0",
+  "description": "9 January 2021",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanmars/node-crash-course-blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vanmars/node-crash-course-blog/issues"
+  },
+  "homepage": "https://github.com/vanmars/node-crash-course-blog#readme",
+  "dependencies": {
+    "lodash": "^4.17.20"
+  }
+}
