@@ -1,11 +1,16 @@
 const express = require('express');
 const app = express();
+const morgan = require('morgan');
 
 //register view engine
 app.set('view engine', 'ejs');  // looks in views folder by default
 
 // listen for requests
 app.listen(3000); // returns the instance of a server, and you can store in a const
+
+//middleware and static files
+app.use(express.static('public'));
+app.use(morgan('dev'));
 
 // respond to requests
 app.get('/', (req, res) => {
